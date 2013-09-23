@@ -1,0 +1,5 @@
+require 'gems'
+
+gem 'sinatra'
+gem 'shotgun'
+gem 'tux'

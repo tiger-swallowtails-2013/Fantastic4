@@ -1,0 +1,70 @@
+.container {
+margin-left:auto;
+margin-right:auto;
+width:56%;
+background-color: #FFFFFF;
+padding: 6%;
+border:2px solid;
+border-radius:25px;
+box-shadow: 5px 5px 5px #888888;
+}
+
+body {
+  background-color:#FFFFE6;
+  color: #4C331A;
+}
+
+#temp{
+  float: left;
+  color: #4C331A;
+  margin-left:auto;
+  margin-right:auto;
+  width:95%;
+  background-color: #FFCC00;
+  padding: 1%;
+  margin-bottom: 5%;
+  border:2px solid;
+  border-radius:25px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.button {
+/*  float:right;
+  margin-right: 19%;*/
+  color:#08233e;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:70%;
+  padding:5px;
+  background-color:#3D991F;
+  border:1px solid #33801A;
+  width: 80px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+ }
+
+ .button:hover {
+  background-color:rgba(255,204,0,0.8);
+ }
+
+ [value="Submit"] {
+    float:right;
+    margin-right: 19%;
+ }
+
+ [value="Start"] {
+    float:left;
+    margin-left: 40%;
+ }
+
+ .textbox {
+  margin-left:19%;
+  margin-right:19%;
+  width: 62%;
+  height: 34px;
+ }
