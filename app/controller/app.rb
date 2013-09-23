@@ -3,8 +3,7 @@ require 'sinatra'
 enable :sessions
 
 get '/' do
-  session[:text] = "It just comes back in flashes you know"
-  @text = session[:text]
+  @text = "It just comes back in flashes you know"
   @ready = session[:ready]
   erb :index
 end
