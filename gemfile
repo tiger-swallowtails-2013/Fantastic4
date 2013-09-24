@@ -1,5 +1,12 @@
-require 'gems'
+source 'https://rubygems.org'
+# require 'gems' ???
 
 gem 'sinatra'
 gem 'shotgun'
 gem 'tux'
+gem 'rack-test'
+
+group :test do
+  gem 'rspec'
+  gem 'rack'
+end
