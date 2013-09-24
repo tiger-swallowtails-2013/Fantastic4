@@ -5,4 +5,9 @@ gem 'sinatra'
 gem 'shotgun'
 gem 'tux'
 
+group :development, :test do
+  gem 'jasmine'
+end
+
+
 
