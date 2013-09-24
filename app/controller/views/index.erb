@@ -1,11 +1,11 @@
 <% if @ready %>
   <div class="game_play">
     <h2>Start Typing!</h2>
-      <div class="game_text">
+      <div class="game_text" id="game_text">
         <%= @text %>
       </div>
     <form action='/results' method='post'>
-      <textarea class="textbox" name='user_input'></textarea>
+      <textarea class="textbox" name='user_input' id='user_input'></textarea>
       </br>
       <input class="button" type='submit' value='Submit'>
     </form>
@@ -21,3 +21,11 @@
     </form>
   </div>
 <% end %>
+
+<script>
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === "complete") {
+      Game.start();
+    }
+  });
+</script>
