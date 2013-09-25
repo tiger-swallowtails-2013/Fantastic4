@@ -1,6 +1,7 @@
 <% if @ready %>
   <div class="game_play">
     <h2>Start Typing!</h2>
+     <img id='turtle' src="turtle.png"></img>
       <div class="game_text">
         <%= @text %>
       </div>
@@ -9,6 +10,8 @@
       </br>
       <input class="button" type='submit' value='Submit'>
     </form>
+
+
   </div>
  <% else %> 
   <div class="new_game_prompt">
@@ -21,3 +24,5 @@
     </form>
   </div>
 <% end %>
+
+<script src="javascripts/turtleMove.js"></script>
