@@ -5,7 +5,7 @@
         <%= @text %>
       </div>
     <form action='/results' method='post'>
-      <textarea class="textbox" name='user_input' id='user_input'></textarea>
+      <textarea class="textbox" name='user_input' id='userArea'></textarea>
       </br>
       <input class="button" type='submit' value='Submit'>
     </form>
@@ -21,11 +21,3 @@
     </form>
   </div>
 <% end %>
-
-<script>
-  document.addEventListener('readystatechange', function() {
-    if (document.readyState === "complete") {
-      Game.start();
-    }
-  });
-</script>

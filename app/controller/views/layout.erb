@@ -7,6 +7,13 @@
   <div class='container'>
     <%= yield %>
   </div>
-  <script src="test.js" type="text/javascript"></script>
+  <script src="test.js" type="text/javascript">
+  
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === "complete") {
+      Game.start();
+    }
+  });
+</script>
 </body>
 

@@ -18,10 +18,9 @@ describe("Game.start", function() {
 });
 
 
-describe("Game.listen", function() {
+describe("Game.timer", function() {
   it("starts the timer", function() {
-    Game.listen();
-    
+    expect(Game.timer).not.toEqual(null)
   });
 });
 
