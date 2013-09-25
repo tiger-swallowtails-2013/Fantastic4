@@ -4,26 +4,26 @@ describe("Game.start", function() {
     userInputElement.id="userArea";
     document.body.appendChild(userInputElement);
 
-    spyOn(Game, "listen");
-
     Game.start();
-
 
     // ACT
     userInputElement.dispatchEvent(new Event('keyup'));
 
     // ASSERT
-    expect(Game.listen).toHaveBeenCalled();
+    expect(Game.timer).toBeTruthy();
   });
 });
 
 
 describe("Game.timer", function() {
   it("starts the timer", function() {
-    expect(Game.timer).not.toEqual(null)
+    expect(Game.timer()).not.toEqual(null)
   });
 });
 
+describe("Game.match", function() {
+  it("returns true if input matches string")
+})
 
 
 
