@@ -25,8 +25,7 @@ describe "starting a new game" do
       expect(last_response.body).to include("Start Typing!")
     end
     it "should chose a random text"
-    it "should start the timer"
-end
+ end
 
 describe "evaluating user input" do
     it "should not accept a wrong string"
