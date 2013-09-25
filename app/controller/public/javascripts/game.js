@@ -11,16 +11,18 @@ var Timer = function() {
   this.logTheTime = function (){
     return new Date().getTime();
   }
-  this.totalTime = function(){
+  this.totalTime = function(){ 
     return (Math.round((this.stopTime - this.startTime)/1000));
   }
 }
 
-var Game = function(){
+Game = function(){
   this.start = function() {
-    console.log("starting game")
+    console.log("game start")
     var game_started = false
+    console.log(document)
     var userInputElement = document.getElementById('userArea');
+    console.log(userInputElement)
     var gameText = document.getElementById('game_text');
 
     userInputElement.addEventListener('keyup', function() {
@@ -74,8 +76,3 @@ var Matcher = function (input,match_text_element){
 
 }
 
-window.onload = function(){
-  console.log("document ready")
-  game = new Game()
-  game.start()
-}
