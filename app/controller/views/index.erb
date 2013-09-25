@@ -2,11 +2,9 @@
   <div class="game_play">
     <h2>Start Typing!</h2>
      <img id='turtle' src="turtle.png"></img>
-      <div class="game_text">
-        <%= @text %>
-      </div>
+      <div id="game_text"><%= @text %></div>
     <form action='/results' method='post'>
-      <textarea class="textbox" name='user_input'></textarea>
+      <textarea class="textbox" name='user_input' id='userArea'></textarea>
       </br>
       <input class="button" type='submit' value='Submit'>
     </form>
@@ -20,9 +18,11 @@
     </br></br>
       Click the button below when you're ready to begin.</p>
     <form action='/ready' method='post'>
-      <input class="button" type='submit' value='Start'>
+      <input class="button" type='submit' value='Start' >
     </form>
   </div>
 <% end %>
+<script src="javascripts/game.js"></script>
+<!-- <script src="javascripts/turtleMove.js"></script> -->
 
-<script src="javascripts/turtleMove.js"></script>
+
