@@ -16,7 +16,9 @@ var Timer = function() {
 }
 
 
+
   var scary_position = 0
+
 
 var Game = function(){
 
@@ -35,7 +37,7 @@ var Game = function(){
 
       if ((new Date() - timer.startTime) > 2000) {
         var scary = document.getElementById('zee')
-        console.log('zee has arrived')
+        
         scary.style.display = "inline"
       }
 
