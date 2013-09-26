@@ -1,5 +1,4 @@
 var Timer = function() {
-  console.log("new Timer")
   this.startTime = null;
   this.stopTime = null;
   this.start = function (){
@@ -21,10 +20,8 @@ function Game() {
   this.getGameText = function(){
     return gameText
   }
-  console.log("outside game.start"+  gameText)
   this.start = function() {
     var game_started = false
-    console.log("inside game.start"+  gameText)
     var userInputElement = document.getElementById('userArea');
     userInputElement.addEventListener('keyup', function() {
       //create a new timer, and start the timer
@@ -47,30 +44,27 @@ function Game() {
   }
 
 }
-  var position = 0
-  var move_turtle = function(){
-    var image = document.getElementById('turtle');
-    console.log("turtle moved")
-    position += 5
-    image.style.marginLeft = position
+
+var position = 0
+var Matcher = function (input,match_text_element){
+ var output={}
+ var x = input.value.length;
+ var match_area = match_text_element.innerText.substring(0,x);
+ if(input.value === match_area){
+  match_text_element.innerHTML = "<span style='color:green'><u>" + match_area + "</u></span>" + match_text_element.innerText.replace(match_area,"")
+      if ( x > 0 ){ // need to fix blank key issue
+      
+      var image = document.getElementById('turtle');
+      position += 5
+      image.style.marginLeft = position
+      
+    }
+  }
+  if(input.value === match_text_element.innerText){
+    output.match = true
   }
 
-var Matcher = function (input,match_text_element){
-   var output={}
-    var x = input.value.length;
-    var match_area = match_text_element.innerText.substring(0,x);
-    if(input.value === match_area){
-      match_text_element.innerHTML = "<span style='color:green'><u>" + match_area + "</u></span>" + match_text_element.innerText.replace(match_area,"")
-      if ( x > 0 ){ // need to fix blank key issue
-      move_turtle()
-    }
-    }
-    if(input.value === match_text_element.innerText){
-      console.log("complete")
-      output.match = true
-    }
-
-    return output
+  return output
 
 }
 
