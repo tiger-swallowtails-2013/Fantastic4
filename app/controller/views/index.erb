@@ -1,7 +1,10 @@
 <% if @ready %>
 <div class="game_play">
   <h2>Start Typing!</h2>
-  <img id='turtle' src="turtle.png"></img>
+    <img id='zee' src="zee1.jpeg"></img>
+    <div id="racetrack">
+    <img id='turtle' src="turtle.png"></img>
+    </div>
   <div id="game_text"><%= @text %></div>
   <form action='/results' method='post'>
     <textarea class="textbox" name='user_input' id='userArea'></textarea>
@@ -22,6 +25,7 @@
   </form>
 </div>
 <% end %>
+
 <script src="javascripts/game.js"></script>
 <script>
 document.addEventListener('readystatechange', function() {

@@ -15,21 +15,30 @@ var Timer = function() {
   }
 }
 
-function Game() {
-  var gameText = document.getElementById('game_text');
-  // this.getGameText = function(){
-  //   return gameText
-  // }
+
+  var scary_position = 0
+
+var Game = function(){
+
   this.start = function() {
     var game_started = false
     var userInputElement = document.getElementById('userArea');
     userInputElement.addEventListener('keyup', function() {
+
+
       //create a new timer, and start the timer
       if (game_started === false){
         timer = new Timer();
         timer.start()
         game_started = true
       }
+
+      if ((new Date() - timer.startTime) > 2000) {
+        var scary = document.getElementById('zee')
+        console.log('zee has arrived')
+        scary.style.display = "inline"
+      }
+
 
       //match input with text on keyup
       matcher = new Matcher(userInputElement,gameText);
@@ -44,6 +53,16 @@ function Game() {
   }
 
 }
+
+  var position = 0
+  
+  var move_turtle = function(){
+    var image = document.getElementById('turtle');
+    console.log("turtle moved")
+    position += 5
+    image.style.marginLeft = position
+  }
+
 
 var position = 0
 var Matcher = function (input,match_text_element){
