@@ -34,6 +34,11 @@ var Game = function(){
         timer.start()
         game_started = true
       }
+      var matcher = new Matcher(userInputElement,gameText);
+      if(matcher.match === true){
+        timer.stop();
+        alert("Congratulations! You finished in " + (timer.totalTime()).toString() + " seconds")
+      }
 
       if ((new Date() - timer.startTime) > 2000) {
         var scary = document.getElementById('zee')
@@ -43,12 +48,7 @@ var Game = function(){
 
 
       //match input with text on keyup
-      matcher = new Matcher(userInputElement,gameText);
 
-      if(matcher.match === true){
-        timer.stop();
-        alert("Congratulations! You finished in " + (timer.totalTime()).toString() + " seconds")
-      }
 
 
     });  
@@ -56,14 +56,7 @@ var Game = function(){
 
 }
 
-  var position = 0
-  
-  var move_turtle = function(){
-    var image = document.getElementById('turtle');
-    console.log("turtle moved")
-    position += 5
-    image.style.marginLeft = position
-  }
+
 
 
 var position = 0
@@ -75,11 +68,10 @@ var Matcher = function (input,match_text_element){
   match_text_element.innerHTML = "<span style='color:green'><u>" + match_area + "</u></span>" + match_text_element.innerText.replace(match_area,"")
       if ( input_length > 0 ){ // need to fix blank key issue
       //move turtle
-  var image = document.getElementById('turtle');
-  position += 5
-  image.style.marginLeft = position
-
-    }
+        var image = document.getElementById('turtle');
+        position += 5
+        image.style.marginLeft = position
+      }
   } 
 if(input.value === match_text_element.innerText){
   output.match = true
