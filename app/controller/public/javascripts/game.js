@@ -16,18 +16,17 @@ var Timer = function() {
   }
 }
 
-Game = function(){
+function Game() {
+  var gameText = document.getElementById('game_text');
+  this.getGameText = function(){
+    return gameText
+  }
+  console.log("outside game.start"+  gameText)
   this.start = function() {
-    console.log("game start")
     var game_started = false
-    console.log(document)
+    console.log("inside game.start"+  gameText)
     var userInputElement = document.getElementById('userArea');
-    console.log(userInputElement)
-    var gameText = document.getElementById('game_text');
-
     userInputElement.addEventListener('keyup', function() {
-      console.log("in event listener")
-
       //create a new timer, and start the timer
       if (game_started === false){
         timer = new Timer();
@@ -57,7 +56,6 @@ Game = function(){
   }
 
 var Matcher = function (input,match_text_element){
-   console.log("running matcher")
    var output={}
     var x = input.value.length;
     var match_area = match_text_element.innerText.substring(0,x);
