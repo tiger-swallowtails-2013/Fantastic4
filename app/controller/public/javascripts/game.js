@@ -21,7 +21,7 @@ var Timer = function() {
 
 
 var Game = function(){
-
+  var gameText = document.getElementById('game_text');
   this.start = function() {
     var game_started = false
     var userInputElement = document.getElementById('userArea');
