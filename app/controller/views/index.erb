@@ -1,7 +1,10 @@
 <% if @ready %>
   <div class="game_play">
     <h2>Start Typing!</h2>
-     <img id='turtle' src="turtle.png"></img>
+      <img id='zee' src="zee1.jpeg"></img>
+     <div id="racetrack">
+      <img id='turtle' src="turtle.png"></img>
+    </div>
       <div id="game_text"><%= @text %></div>
     <form action='/results' method='post'>
       <textarea class="textbox" name='user_input' id='userArea'></textarea>
@@ -18,7 +21,7 @@
     </br></br>
       Click the button below when you're ready to begin.</p>
     <form action='/ready' method='post'>
-      <input class="button" type='submit' value='Start' >
+      <input class="button" typ9e='submit' value='Start' >
     </form>
   </div>
 <% end %>

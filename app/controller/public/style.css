@@ -67,6 +67,17 @@ body {
   height: 34px;
  }
 
- .turtle {
-  margin-left: 0px;
- }
+#turtle {
+  position: absolute;
+  z-index: 30;
+
+}
+
+ #zee {
+  display: none;
+  position: absolute;
+}
+
+#racetrack {
+  height: 300px;
+}

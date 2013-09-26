@@ -16,6 +16,8 @@ var Timer = function() {
   }
 }
 
+  var scary_position = 0
+
 var Game = function(){
   this.start = function() {
     console.log("starting game")
@@ -26,12 +28,20 @@ var Game = function(){
     userInputElement.addEventListener('keyup', function() {
       console.log("in event listener")
 
+
       //create a new timer, and start the timer
       if (game_started === false){
         timer = new Timer();
         timer.start()
         game_started = true
       }
+
+      if ((new Date() - timer.startTime) > 2000) {
+        var scary = document.getElementById('zee')
+        console.log('zee has arrived')
+        scary.style.display = "inline"
+      }
+
 
       //match input with text on keyup
       matcher = new Matcher(userInputElement,gameText);
@@ -47,6 +57,7 @@ var Game = function(){
 
 }
   var position = 0
+  
   var move_turtle = function(){
     var image = document.getElementById('turtle');
     console.log("turtle moved")
