@@ -17,9 +17,9 @@ var Timer = function() {
 
 function Game() {
   var gameText = document.getElementById('game_text');
-  this.getGameText = function(){
-    return gameText
-  }
+  // this.getGameText = function(){
+  //   return gameText
+  // }
   this.start = function() {
     var game_started = false
     var userInputElement = document.getElementById('userArea');
@@ -48,23 +48,23 @@ function Game() {
 var position = 0
 var Matcher = function (input,match_text_element){
  var output={}
- var x = input.value.length;
- var match_area = match_text_element.innerText.substring(0,x);
+ var input_length = input.value.length;
+ var match_area = match_text_element.innerText.substring(0,input_length);
  if(input.value === match_area){
   match_text_element.innerHTML = "<span style='color:green'><u>" + match_area + "</u></span>" + match_text_element.innerText.replace(match_area,"")
-      if ( x > 0 ){ // need to fix blank key issue
-      
-      var image = document.getElementById('turtle');
-      position += 5
-      image.style.marginLeft = position
-      
-    }
-  }
-  if(input.value === match_text_element.innerText){
-    output.match = true
-  }
+      if ( input_length > 0 ){ // need to fix blank key issue
+      //move turtle
+  var image = document.getElementById('turtle');
+  position += 5
+  image.style.marginLeft = position
 
-  return output
+    }
+  } 
+if(input.value === match_text_element.innerText){
+  output.match = true
+}
+
+return output
 
 }
 
