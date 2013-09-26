@@ -22,7 +22,7 @@ describe("Timer", function(){
   it("starts time", function (){
     expect(timer.startTime).not.toEqual(null)
   });
-    waits(1000)
+  waits(1000)
   
   it("stops time", function(){
     timer.stop()
@@ -31,11 +31,11 @@ describe("Timer", function(){
 
   it("returns total time in seconds",
     runs(function (){
-    expect(timer.totalTime()).toBeCloseTo(1)
-  }));
+      expect(timer.totalTime()).toBeCloseTo(1)
+    }));
 });
 
-describe("Word Matcher", function(){
+describe("Word matcher", function(){
   var text, input, turtle;
   beforeEach(function(){
     text = document.createElement('div')
@@ -47,26 +47,35 @@ describe("Word Matcher", function(){
     input.value = "You shall not pass!"
   })
   it("matches user input to hard coded text", function(){
+    console.log(input)
     var matcher = new Matcher(input, text)
     expect(matcher.match).toEqual(true)
   })
-  it("turtle image moves to matched words", function(){
-    console.log(position)
-    expect(turtle.style.marginLeft).toBeGreaterThan(0)
+  it("turtle image moves on correct match", function(){
+    expect(position).toBeGreaterThan(0)
   })
-
-
-  it("changes the dom element")
+  it("changes the dom element when input is a partial match", function(){
+    input.value = "You"
+    console.log("before: " + text.innerHTML)
+    var matcher = new Matcher(input,text)
+    console.log("after: " + text.innerHTML)
+    expect(text.innerHTML).toEqual("<span style=\"color:green\"><u>You</u></span> shall not pass!")
+  })
 })
 
 
 
-// describe("Game setup", function(){
-//   it("selects the game text from the dom", function(){
-//     var gameText = document.createElement('div')
-//     gameText.id = 'game_text'
-//     gameText.innerHTML = "Some text"
-//     document.body.appendChild(gameText)
-//     expect()
-//   })
-// })
+
+
+
+// <input value="You"></input>
+// <div>You Shall not Pass!</div>
+
+
+
+
+
+
+
+
+
