@@ -7,7 +7,7 @@
 
 
 
-window.onkeypress = move_turtle;
+// window.onkeypress = move_turtle;
 
 
 // function move_turtle(){
