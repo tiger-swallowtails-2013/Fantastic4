@@ -1,11 +1,14 @@
 describe("Game function", function() {
-  it("ensures timer gets called on keyup", function(){ 
-    var userInputElement = document.createElement('input')
+  var game, userInputElement;
+  beforeEach(function() {
+    userInputElement = document.createElement('input')
     userInputElement.setAttribute('id', 'userArea')
     document.body.appendChild(userInputElement)
     game = new Game()
-    game.start()
+  });
 
+  it("ensures timer gets called on keyup", function(){ 
+    
     // ACT
     userInputElement.dispatchEvent(new Event('keyup'))
 
@@ -13,7 +16,28 @@ describe("Game function", function() {
     expect(timer.startTime).toBeDefined()
   });
 
-  
+  describe('showZee', function() {
+    it("sets zee to display inline");
+    it("doesn't do anything if game.zeeVisible is true")
+  })
+
+  describe('handleKeyUp', function() {
+    it("starts when the game isn't started");
+    it("stops when the matcher says it is completed");
+    it("shows Zee after 2 seconds");
+    it("moves the turtle when the matcher says it's a match", function() {
+      spyOn(game.matcher, 'match').andReturn(true);
+      spyOn(game, 'moveTurtle');
+      
+
+      game.handleKeyUp();
+
+      expect(game.moveTurtle).toHaveBeenCalled();
+    });
+    it("doesn't move the turtle when the matcher says it's not a match", function() {
+
+    });
+  });
 });
 
 describe("Timer", function(){
@@ -34,6 +58,8 @@ describe("Timer", function(){
       expect(timer.totalTime()).toBeCloseTo(1)
     }));
 });
+
+
 
 describe("Word matcher", function(){
   var text, input, turtle;
