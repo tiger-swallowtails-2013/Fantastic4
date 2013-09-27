@@ -10,7 +10,7 @@ var Timer = function() {
   this.logTheTime = function (){
     return new Date().getTime();
   }
-  this.totalTime = function(){ 
+  this.totalTime = function(){
     return (Math.round((this.stopTime - this.startTime)/1000));
   }
 }
@@ -22,8 +22,9 @@ var Timer = function() {
 
 var Game = function(){
   var gameText = document.getElementById('game_text');
+  var game_started = false
+  var game_done = false
   this.start = function() {
-    var game_started = false
     var userInputElement = document.getElementById('userArea');
     userInputElement.addEventListener('keyup', function() {
 
@@ -37,27 +38,27 @@ var Game = function(){
 
       if ((new Date() - timer.startTime) > 2000) {
         var scary = document.getElementById('zee')
-        
+
         scary.style.display = "inline"
       }
 
-
+      console.log(game_done)
       //match input with text on keyup
       matcher = new Matcher(userInputElement,gameText);
-
-      if(matcher.match === true){
+      if(matcher.match === true && game_done === false){
         timer.stop();
-        alert("Congratulations! You finished in " + (timer.totalTime()).toString() + " seconds")
+        game_done = true
+        alert("Congratulations! " + userInputElement.value.split('').length/(timer.totalTime()) + " wpm")
       }
 
 
-    });  
+    });
   }
 
 }
 
   var position = 0
-  
+
   var move_turtle = function(){
     var image = document.getElementById('turtle');
     console.log("turtle moved")
@@ -80,7 +81,7 @@ var Matcher = function (input,match_text_element){
   image.style.marginLeft = position
 
     }
-  } 
+  }
 if(input.value === match_text_element.innerText){
   output.match = true
 }
