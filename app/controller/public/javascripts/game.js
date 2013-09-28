@@ -10,7 +10,7 @@ var Timer = function() {
   this.logTheTime = function (){
     return new Date().getTime();
   }
-  this.totalTime = function(){ 
+  this.totalTime = function(){
     return (Math.round((this.stopTime - this.startTime)/1000));
   }
 }
@@ -43,12 +43,13 @@ var Game = function() {
     if (!this.started){
       this.start();
     }
-    
+
     if(this.matcher.completeMatch()){
       this.stop();
     }
 
     if(this.matcher.match()) {
+      console.log('match')
       this.moveTurtle();
     }
 
@@ -65,12 +66,12 @@ var Game = function() {
 
   this.showZee = function() {
     if(!this.zeeVisible) {
-      var scary = document.getElementById('zee')  
-      scary.style.display = "inline"  
+      var scary = document.getElementById('zee')
+      scary.style.display = "inline"
       this.zeeVisible = true;
     }
   }
-  
+
   this.stop = function() {
     this.timer.stop();
     alert("Congratulations! You finished in " + (this.timer.totalTime()).toString() + " seconds")
@@ -89,16 +90,18 @@ var Matcher = function (input,match_text_element) {
   this.match = function() {
     var input_length = input.value.length;
     var match_area = match_text_element.innerText.substring(0,input_length);
-    
+
 
     if (input.value === match_area) {
-      this.highlightWords(match_area);  
+      this.highlightWords(match_area);
       return true;
     }
 
     return false;
   }
   this.completeMatch = function() {
+    console.log(input.value)
+    console.log(match_text_element.innerText)
     return input.value === match_text_element.innerText;
   }
 
